@@ -1,0 +1,582 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta content="IE=edge" http-equiv="X-UA-Compatible">
+    <meta content="width=device-width, initial-scale=1, shrink-to-fit=no" name="viewport">
+    <meta content="" name="description">
+    <meta content="" name="author">
+
+    <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
+    <meta http-equiv="Pragma" content="no-cache">
+    <meta http-equiv="Expires" content="0">
+
+    <title>Home</title>
+
+    <!-- Custom fonts for this template-->
+    <link href="vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
+    <link href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i"
+          rel="stylesheet">
+
+    <!-- Custom styles for this template-->
+    <link href="css/index.css" rel="stylesheet" type="text/css">
+    <link href="css/home.css" rel="stylesheet" type="text/css">
+</head>
+
+<body id="page-top">
+<!-- Page Wrapper -->
+<div id="wrapper">
+
+    <!-- Sidebar -->
+    <ul class="navbar-nav bg-gradient-primary sidebar sidebar-dark accordion" id="accordionSidebar">
+
+        <!-- Sidebar - Brand -->
+        <a class="sidebar-brand d-flex align-items-center justify-content-center" href="home.html">
+            <div class="sidebar-brand-icon">
+                <img alt="X" height="40" src="images/ubbsitelogo.svg" width="40">
+            </div>
+            <div class="sidebar-brand-text mx-3">UBB ADMIN</div>
+        </a>
+
+        <!-- Divider -->
+        <hr class="sidebar-divider my-0">
+
+        <!-- Nav Item - Dashboard -->
+        <li class="nav-item active">
+            <a class="nav-link" href="home.html">
+                <i class="fas fa-fw fa-tachometer-alt"></i>
+                <span>Dashboard</span></a>
+        </li>
+
+        <!-- Divider -->
+        <hr class="sidebar-divider">
+
+        <!-- Heading -->
+        <div class="sidebar-heading">
+            Actions
+        </div>
+
+        <!-- Nav Item - Utilities Collapse Menu -->
+        <li class="nav-item">
+            <a aria-controls="collapseUtilities" aria-expanded="true" class="nav-link collapsed"
+               data-target="#collapseUtilities" data-toggle="collapse" href="#">
+                <i class="fas fa-fw fa-wrench"></i>
+                <span>Utilities</span>
+            </a>
+            <div aria-labelledby="headingUtilities" class="collapse" data-parent="#accordionSidebar"
+                 id="collapseUtilities">
+                <div class="bg-white py-2 collapse-inner rounded">
+                    <h6 class="collapse-header">Add/Modify:</h6>
+                    <a id="schedule" class="collapse-item" onclick="getSchedule(this);">Schedule</a>
+                    <a id="attendance" class="collapse-item" onclick="makeAttendance(this);">Attendances</a>
+                    <a id="grades" class="collapse-item" onclick="getGrades(this);">Grades</a>
+                    <a id="homework" class="collapse-item" onclick="makeHomework(this);">Homeworks</a>
+                    <h6 class="collapse-header">Make:</h6>
+                    <a id="announcement" class="collapse-item" onclick="makeAnnouncement(this);">Announcements</a>
+                </div>
+            </div>
+        </li>
+
+        <!-- Divider -->
+        <hr class="sidebar-divider">
+
+        <!-- Heading -->
+        <div class="sidebar-heading">
+            Other
+        </div>
+
+        <!-- Nav Item - Pages Collapse Menu -->
+        <li class="nav-item">
+            <a aria-controls="collapsePages" aria-expanded="true" class="nav-link collapsed"
+               data-target="#collapsePages" data-toggle="collapse" href="#">
+                <i class="fas fa-fw fa-folder"></i>
+                <span>My Courses</span>
+            </a>
+            <div aria-labelledby="headingPages" class="collapse" data-parent="#accordionSidebar" id="collapsePages">
+                <div id="yearsOfStudy" class="bg-white py-2 collapse-inner rounded">
+                    <h6 id="firstYearOfStudy" class="collapse-header">1st Year:</h6>
+
+                    <h6 id="secondYearOfStudy" class="collapse-header">2nd Year:</h6>
+
+                    <h6 id="thirdYearOfStudy" class="collapse-header">3rd Year:</h6>
+                </div>
+            </div>
+        </li>
+
+        <!-- Divider -->
+        <hr class="sidebar-divider d-none d-md-block">
+
+        <!-- Sidebar Toggler (Sidebar) -->
+        <div class="text-center d-none d-md-inline">
+            <button class="rounded-circle border-0" id="sidebarToggle"></button>
+        </div>
+
+    </ul>
+    <!-- End of Sidebar -->
+
+    <!-- Content Wrapper -->
+    <div class="d-flex flex-column" id="content-wrapper">
+
+        <!-- Main Content -->
+        <div id="content">
+
+            <!-- Topbar -->
+            <nav class="navbar navbar-expand navbar-light bg-white topbar mb-4 static-top shadow">
+
+                <!-- Sidebar Toggle (Topbar) -->
+                <button class="btn btn-link d-md-none rounded-circle mr-3" id="sidebarToggleTop">
+                    <i class="fa fa-bars"></i>
+                </button>
+
+                <!-- Topbar Search -->
+                <form class="d-none d-sm-inline-block form-inline mr-auto ml-md-3 my-2 my-md-0 mw-100 navbar-search">
+                    <div class="input-group">
+                        <input aria-describedby="basic-addon2" aria-label="Search"
+                               class="form-control bg-light border-0 small" placeholder="Search for..." type="text">
+                        <div class="input-group-append">
+                            <button class="btn btn-primary" type="button">
+                                <i class="fas fa-search fa-sm"></i>
+                            </button>
+                        </div>
+                    </div>
+                </form>
+
+                <!-- Topbar Navbar -->
+                <ul class="navbar-nav ml-auto">
+
+                    <!-- Nav Item - Search Dropdown (Visible Only XS) -->
+                    <li class="nav-item dropdown no-arrow d-sm-none">
+                        <a aria-expanded="false" aria-haspopup="true" class="nav-link dropdown-toggle"
+                           data-toggle="dropdown" href="#" id="searchDropdown" role="button">
+                            <i class="fas fa-search fa-fw"></i>
+                        </a>
+
+                        <!-- Nav Item - User Information -->
+                    <li class="nav-item dropdown no-arrow">
+                        <a aria-expanded="false" aria-haspopup="true" class="nav-link dropdown-toggle"
+                           data-toggle="dropdown" href="#" id="userDropdown" role="button">
+                            <span id="professorFullName" class="mr-2 d-none d-lg-inline text-gray-600 small"></span>
+                            <img id="professorImage" class="img-profile rounded-circle"
+                                 src="https://i0.wp.com/www.repol.copl.ulaval.ca/wp-content/uploads/2019/01/default-user-icon.jpg">
+                        </a>
+                        <!-- Dropdown - User Information -->
+                        <div aria-labelledby="userDropdown"
+                             class="dropdown-menu dropdown-menu-right shadow animated--grow-in">
+                            <a class="dropdown-item" href="#">
+                                <i class="fas fa-user fa-sm fa-fw mr-2 text-gray-400"></i>
+                                Profile
+                            </a>
+                            <a class="dropdown-item" href="#">
+                                <i class="fas fa-cogs fa-sm fa-fw mr-2 text-gray-400"></i>
+                                Settings
+                            </a>
+                            <div class="dropdown-divider"></div>
+                            <a class="dropdown-item" data-target="#logoutModal" data-toggle="modal" href="#">
+                                <i class="fas fa-sign-out-alt fa-sm fa-fw mr-2 text-gray-400"></i>
+                                Logout
+                            </a>
+                        </div>
+                    </li>
+
+                </ul>
+
+            </nav>
+            <!-- End of Topbar -->
+
+            <!-- Begin Page Content -->
+            <div class="container-fluid">
+
+                <!-- Page Heading -->
+                <div id="mainWindow" class="afterClick">
+                    <div class="d-sm-flex align-items-center justify-content-between mb-4">
+                        <h1 class="h3 mb-0 text-gray-800">Dashboard</h1>
+                    </div>
+                    <div class="border rounded p-3 mt-2">
+                        <h3>Tips</h3>
+                        <div>
+                            <p>Welcome to the administrative platform! Here you are in the control of what happens, try
+                                not to brake it.</p>
+                        </div>
+                        <ul>
+                            <li>Select a course from My Courses, it makes the job easier!</li>
+                            <li>Checkboxes from the tables fill the text boxes in, use them.</li>
+                            <li>There will always be a message if needed.</li>
+                        </ul>
+
+                    </div>
+                </div>
+
+                <div id="scheduleWindow" class="beforeClick">
+
+                    <h1>Schedule</h1>
+
+                    <div>
+                        <p>Guide</p>
+                        <ul>
+                            <li>If a row from table is checked inputs will be filled in!</li>
+                            <li>To add a class to the schedule, all inputs must be filled!</li>
+                            <li>To update a class, the name and type text boxes must be filled</li>
+                            <li>To update a class, the name and type can not be changed, because the update will not
+                                produce
+                            </li>
+                            <li>To update a class, fill in just the data which needs to be updated, beside the required
+                                ones
+                            </li>
+                        </ul>
+                    </div>
+
+                    <p class="h4 alert-danger" id="errorMessageSchedule"></p>
+                    <p class="h4 alert-success" id="successMessageSchedule"></p>
+
+                    <div class="border rounded p-3 mt-2">
+                        <h3>Discipline Address</h3>
+                        <label class="mt-1" for="scheduleLatitude">Latitude:</label>
+                        <input class="form-control" type="text" id="scheduleLatitude" name="scheduleLatitude">
+
+                        <label class="mt-1" for="scheduleLongitude">Longitude:</label>
+                        <input class="form-control" type="text" id="scheduleLongitude" name="scheduleLongitude">
+
+                        <label class="mt-1" for="addressName">Name:</label>
+                        <input class="form-control" type="text" id="addressName" name="addressName">
+
+                        <label class="mt-1" for="addressRoom">Room:</label>
+                        <input class="form-control" type="text" id="addressRoom" name="addressRoom">
+                    </div>
+
+                    <div class="border rounded p-3 mt-2 mb-2">
+                        <h3>Class Info</h3>
+                        <label class="mt-1" for="disciplineName">Name:</label>
+                        <input class="form-control" type="text" id="disciplineName" name="disciplineName">
+
+                        <label class="mt-1" for="disciplineFullName">Full name:</label>
+                        <input class="form-control" type="text" id="disciplineFullName" name="disciplineFullName">
+
+                        <label class="mt-1" for="disciplineType">Type:</label>
+                        <select class="form-control" id="disciplineType">
+                            <option>course</option>
+                            <option>seminary</option>
+                            <option>laboratory</option>
+                        </select>
+
+                        <label class="mt-1" for="disciplineDay">Day:</label>
+                        <select class="form-control" id="disciplineDay">
+                            <option>Monday</option>
+                            <option>Tuesday</option>
+                            <option>Wednesday</option>
+                            <option>Thursday</option>
+                            <option>Friday</option>
+                        </select>
+
+                        <label class="mt-1" for="disciplineStartHour">Start Hour:</label>
+                        <input class="form-control" type="text" id="disciplineStartHour" name="disciplineStartHour">
+
+                        <label class="mt-1" for="disciplineEndHour">End Hour:</label>
+                        <input class="form-control" type="text" id="disciplineEndHour" name="disciplineEndHour">
+
+                        <label class="mt-1" for="disciplineWeek">Week:</label>
+                        <select class="form-control" id="disciplineWeek">
+                            <option>Every Week</option>
+                            <option>Uneven</option>
+                            <option>Even</option>
+                        </select>
+
+
+                        <label class="mt-1" for="disciplineGroup">Group:</label>
+                        <input class="form-control" type="text" id="disciplineGroup" name="disciplineGroup">
+                    </div>
+
+                    <button class="btn btn-primary mt-2 mb-2" onclick="addDiscipline()">Add</button>
+                    <button class="btn btn-primary mt-2 mb-2 ml-2" onclick="getDisciplineKey()">Update</button>
+
+                    <table class="table table-responsive-lg table-striped" id="scheduleTable">
+                        <thead>
+                        <tr>
+                            <th>Name</th>
+                            <th>FullName</th>
+                            <th>Type</th>
+                            <th>Day</th>
+                            <th>Start Hour</th>
+                            <th>End Hour</th>
+                            <th>Week</th>
+                            <th>Group</th>
+                        </tr>
+                        </thead>
+                        <tbody>
+
+                        </tbody>
+                    </table>
+                </div>
+
+                <div id="attendanceWindow" class="beforeClick">
+                    <h1>Attendance</h1>
+
+                    <div>
+                        <p>Guide</p>
+                        <ul>
+                            <li>Select if the location wants to be used.</li>
+                            <li>Fill in all the inputs!</li>
+                            <li>After creating a session for attendance, if the See List button will be pressed a list
+                                with signed students will appear
+                            </li>
+                            <li>Finish Attendance button will wrote the students to the database, press when wanted</li>
+                        </ul>
+                    </div>
+
+                    <p class="h4 alert-danger" id="errorMessageAttendance"></p>
+                    <p class="h4 alert-success" id="successMessageAttendance"></p>
+                    <div class="border rounded p-3 mt-2">
+
+                        <input class="custom-radio" type="radio" id="withLocation" name="optionAttendance"
+                               value="withLocation">
+                        <label for="withLocation">Use Location</label>
+
+                        <br>
+
+                        <input class="custom-radio" type="radio" id="withoutLocation" name="optionAttendance"
+                               value="withoutLocation">
+                        <label for="withoutLocation">No Location</label>
+
+                        <br>
+
+                        <label for="attendanceCode">Attendance Code</label>
+                        <input class="form-control" type="text" id="attendanceCode" name="attendanceCode">
+
+                        <label for="attendanceCode">Class number</label>
+                        <input class="form-control" type="text" id="attendanceNumber" name="attendanceNumber">
+
+                        <button class="btn btn-primary ml-0 mt-3" onclick="getLocation()">Create Attendance</button>
+
+                        <br>
+                        <button class="btn btn-primary ml-0 mt-3" onclick="getList()">See List</button>
+                        <br>
+
+                        <button class="btn btn-primary ml-0 mt-3 mb-3" onclick="writeStudentsToAttendance()">Finish
+                            Attendance
+                        </button>
+                    </div>
+                    <br>
+
+                    <table class="table table-responsive-lg table-striped" id="attendanceTable">
+                        <thead>
+                        <tr>
+                            <th>#</th>
+                            <th>Student Name</th>
+                            <th>Student Email</th>
+                        </tr>
+                        </thead>
+                        <tbody>
+                        </tbody>
+                    </table>
+                </div>
+
+                <div id="gradesWindow" class="beforeClick">
+
+                    <h1>Grades</h1>
+
+                    <p>Guide</p>
+                    <ul>
+                        <li>Select one of the options</li>
+                        <li>Check the button from table to fill the email text box in with the student email</li>
+                        <li>Fill in all inputs!</li>
+                    </ul>
+
+                    <p class="h4 alert-danger" id="errorMessageGrades"></p>
+                    <p class="h4 alert-success" id="successMessageGrades"></p>
+
+                    <input type="radio" id="markStudent" name="optionGrades" value="markStudent">
+                    <label for="markStudent">Mark a student</label>
+
+                    <br>
+
+                    <input type="radio" id="markStudents" name="optionGrades" value="markStudents">
+                    <label for="markStudents">Mark all students</label>
+
+                    <br>
+
+                    <p>-----------------------------------------</p>
+
+                    <div id="markStudentContent" class="marksContent">
+                        <div class="border rounded p-3 mt-2">
+                            <label for="studentEmailMark">Student email:</label>
+                            <input class="form-control" type="text" id="studentEmailMark">
+                            <label for="studentMark">Student mark:</label>
+                            <input class="form-control" type="text" id="studentMark">
+                            <label for="studentCourseNumber">Course number:</label>
+                            <input class="form-control" type="text" id="studentCourseNumber">
+                            <label for="studentRemark">Student remarks:</label>
+                            <textarea class="form-control" id="studentRemark" rows="4" cols="50"></textarea>
+
+                            <button class="btn btn-primary ml-0 mt-3 mb-3" onclick="addMark()">Submit mark</button>
+                        </div>
+                        <table class="table table-responsive-lg table-striped" id="gradesTable">
+                            <thead>
+                            <tr>
+                                <th>Name</th>
+                                <th>Email</th>
+                            </tr>
+                            </thead>
+                            <tbody>
+                            </tbody>
+                        </table>
+                    </div>
+
+                    <div id="markStudentsContent" class="marksContent">
+                        <h1>IN DEVELOPMENT</h1>
+                    </div>
+                </div>
+
+                <div id="homeworkWindow" class="beforeClick">
+
+                    <h1>Homework</h1>
+
+                    <p>Guide</p>
+                    <ul>
+                        <li>The first three inputs are required for a successful addition</li>
+                        <li>Deadline should have a bigger value then start week.</li>
+                    </ul>
+
+                    <p class="h4 alert-danger" id="errorMessageHomework"></p>
+                    <p class="h4 alert-success" id="successMessageHomework"></p>
+                    <div class="border rounded p-3 mt-2">
+
+                        <label for="deadline">Deadline: </label>
+                        <input class="form-control" type="text" id="deadline">
+
+                        <label for="startWeek">Start week: </label>
+                        <input class="form-control" type="text" id="startWeek">
+
+                        <label for="title">Title: </label>
+                        <input class="form-control" type="text" id="title">
+
+                        <label for="extraHomework">Extra(links only): </label>
+                        <input class="form-control" type="text" id="extraHomework">
+
+                        <label for="homeworkText">Text: </label>
+                        <textarea class="form-control" id="homeworkText"></textarea>
+
+                        <button class="btn btn-primary ml-0 mt-3 mb-3" onclick="addHomework()">Add homework</button>
+                    </div>
+                </div>
+
+                <div id="announcementWindow" class="beforeClick">
+
+                    <h1>Announcement</h1>
+
+                    <p>Guide</p>
+                    <ul>
+                        <li>If the Announce all students checkbox is checked all students will see the announcemnet</li>
+                        <li>Fill in all inputs!</li>
+                    </ul>
+
+                    <p class="h4 alert-danger" id="errorMessageAnnouncement"></p>
+                    <p class="h4 alert-success" id="successMessageAnnouncement"></p>
+                    <div class="border rounded p-3 mt-2">
+
+                        <label for="announceAll">Announce all students? </label>
+                        <input class="ml-2" type="checkbox" id="announceAll">
+
+                        <br>
+
+                        <label for="announcementTitle">Title: </label>
+                        <input class="form-control" type="text" id="announcementTitle">
+
+                        <label for="announcementDate">Date: </label>
+                        <input class="form-control" type="date" id="announcementDate">
+
+                        <label for="years">Select a year of study: </label>
+                        <select class="custom-select" id="years"></select>
+
+                        <label for="text">Content: </label>
+                        <textarea class="form-control" id="text"></textarea>
+
+                        <button class="btn btn-primary ml-0 mt-3 mb-3" onclick="addAnnouncement()">Make Announcement
+                        </button>
+                    </div>
+                </div>
+
+            </div>
+
+            <!-- Footer -->
+            <footer class="sticky-footer bg-white">
+                <div class="container my-auto">
+                    <div class="copyright text-center my-auto">
+                        <span>Copyright &copy; haraga&mehawk 2020</span>
+                    </div>
+                </div>
+            </footer>
+            <!-- End of Footer -->
+
+        </div>
+        <!-- End of Content Wrapper -->
+
+    </div>
+    <!-- End of Page Wrapper -->
+
+    <!-- Scroll to Top Button-->
+    <a class="scroll-to-top rounded" href="#page-top">
+        <i class="fas fa-angle-up"></i>
+    </a>
+
+    <!-- Logout Modal-->
+    <div aria-hidden="true" aria-labelledby="exampleModalLabel" class="modal fade" id="logoutModal" role="dialog"
+         tabindex="-1">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabel">Ready to Leave?</h5>
+                    <button aria-label="Close" class="close" data-dismiss="modal" type="button">
+                        <span aria-hidden="true">×</span>
+                    </button>
+                </div>
+                <div class="modal-body">Select "Logout" below if you are ready to end your current session.</div>
+                <div class="modal-footer">
+                    <button class="btn btn-secondary" data-dismiss="modal" type="button">Cancel</button>
+                    <button class="btn btn-primary" onclick="logOut()">Log Out</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Firebase App (the core Firebase SDK) is always required and must be listed first -->
+<script src="https://www.gstatic.com/firebasejs/7.14.2/firebase-app.js"></script>
+<script src="https://www.gstatic.com/firebasejs/7.14.2/firebase-database.js"></script>
+<script src="https://www.gstatic.com/firebasejs/7.14.2/firebase-auth.js"></script>
+<script src="https://www.gstatic.com/firebasejs/7.14.2/firebase-storage.js"></script>
+
+<script>
+    // Your web app's Firebase configuration
+    var firebaseConfig = {
+        apiKey: "AIzaSyCCBKqx75PCUPwmM-FSBjkIbvDKfgNlv4Y",
+        authDomain: "licenta-43ec6.firebaseapp.com",
+        databaseURL: "https://licenta-43ec6.firebaseio.com",
+        projectId: "licenta-43ec6",
+        storageBucket: "licenta-43ec6.appspot.com",
+        messagingSenderId: "566470398926",
+        appId: "1:566470398926:web:236886a164aa8a348b919f"
+    };
+    // Initialize Firebase
+    firebase.initializeApp(firebaseConfig);
+</script>
+
+<!-- Bootstrap core JavaScript-->
+<script src="vendor/jquery/jquery.min.js"></script>
+<script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+
+<!-- Core plugin JavaScript-->
+<script src="vendor/jquery-easing/jquery.easing.min.js"></script>
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+
+<script type="text/javascript" src="javascript/checkUser.js"></script>
+<script src="javascript/initializeHome.js"></script>
+<script src="javascript/home.js"></script>
+<script src="javascript/schedule.js"></script>
+<script src="javascript/attendance.js"></script>
+<script src="javascript/grades.js"></script>
+<script src="javascript/homework.js"></script>
+<script src="javascript/announcement.js"></script>
+</body>
+
+</html>

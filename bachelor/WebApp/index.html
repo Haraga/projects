@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+    <head>
+        <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
+        <meta http-equiv="Pragma" content="no-cache">
+        <meta http-equiv="Expires" content="0">
+
+        <meta charset="utf-8">
+        <meta content="IE=edge" http-equiv="X-UA-Compatible">
+        <meta content="width=device-width, initial-scale=1, shrink-to-fit=no" name="viewport">
+        <meta content="" name="description">
+        <meta content="" name="author">
+
+        <title>UBBsite - Login</title>
+
+        <!-- Custom fonts for this template-->
+        <link href="vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
+        <link href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i"
+              rel="stylesheet">
+
+        <!-- Custom styles for this template-->
+        <link href="css/login.css" rel="stylesheet" type="text/css">
+        <link href="css/mylogin.css" rel="stylesheet" type="text/css">
+    </head>
+    <body class="bg-gradient-primary">
+
+        <div class="container">
+
+            <!-- Outer Row -->
+            <div class="row justify-content-center">
+
+                <div class="col-xl-10 col-lg-12 col-md-9">
+
+                    <div class="card o-hidden border-0 shadow-lg my-5">
+                        <div class="card-body p-0">
+                            <!-- Nested Row within Card Body -->
+                            <div class="row login-card">
+                                <div class="col-lg-6 d-none d-lg-block my-auto">
+                                    <img class="mx-auto d-block" height="300" src="images/loginlogo.svg" width="300">
+                                </div>
+                                <div class="col-lg-6">
+                                    <div class="p-5">
+                                        <div class="text-center">
+                                            <h1 class="h4 text-white mb-4">Welcome Back!</h1>
+                                        </div>
+                                        <form class="user">
+                                            <p id="errorMessage" class="errorMessage">&nbsp;</p>
+                                            <div class="form-group">
+                                                <input aria-describedby="emailHelp" class="form-control form-control-user"
+                                                       id="email" placeholder="Email Address"
+                                                       type="email">
+                                            </div>
+                                            <div class="form-group">
+                                                <input class="form-control form-control-user" id="password"
+                                                       placeholder="Password" type="password">
+                                            </div>
+                                            <div class="form-group">
+                                                <div class="custom-control custom-checkbox small">
+                                                    <input class="custom-control-input" id="customCheck" type="checkbox">
+                                                    <label class="custom-control-label text-white" for="customCheck">Remember
+                                                        Me</label>
+                                                </div>
+                                            </div>
+                                            <div class="text-center">
+                                                <button class="btn btn-primary btn-user" type="button" name="button" onclick="logIn()">Log In</button>
+                                            </div>
+                                            <div class="text-center mt-3">
+                                                <a class="small text-white" href="forgot-password.html">Forgot Password?</a>
+                                            </div>
+                                        </form>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+        <!-- Firebase App (the core Firebase SDK) is always required and must be listed first -->
+        <script src="https://www.gstatic.com/firebasejs/7.14.2/firebase-app.js"></script>
+
+        <!-- Add Firebase products that you want to use -->
+        <script src="https://www.gstatic.com/firebasejs/7.14.2/firebase-auth.js"></script>
+
+        <script>
+            // Your web app's Firebase configuration
+            var firebaseConfig = {
+                apiKey: "AIzaSyCCBKqx75PCUPwmM-FSBjkIbvDKfgNlv4Y",
+                authDomain: "licenta-43ec6.firebaseapp.com",
+                databaseURL: "https://licenta-43ec6.firebaseio.com",
+                projectId: "licenta-43ec6",
+                storageBucket: "licenta-43ec6.appspot.com",
+                messagingSenderId: "566470398926",
+                appId: "1:566470398926:web:236886a164aa8a348b919f"
+            };
+            // Initialize Firebase
+            firebase.initializeApp(firebaseConfig);
+        </script>
+
+        <script src="javascript/index.js"></script>
+
+
+        <!-- Bootstrap core JavaScript-->
+        <script src="vendor/jquery/jquery.min.js"></script>
+        <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+
+        <!-- Core plugin JavaScript-->
+        <script src="vendor/jquery-easing/jquery.easing.min.js"></script>
+    </body>
+</html>

@@ -1,0 +1,17 @@
+.img-center {
+    display: inline-block;
+}
+
+.login-card {
+    background-color: #4e73df;
+    background-image: linear-gradient(180deg, #4e73df 10%, #224abe 100%);
+    background-size: cover;
+}
+
+.text-yellow {
+    color: #F6D109 !important;
+}
+
+.errorMessage {
+  color: #ff0055 !important;
+}

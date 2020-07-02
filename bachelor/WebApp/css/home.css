@@ -1,0 +1,11 @@
+.beforeClick{
+    display: none;
+}
+
+.afterClick{
+    display: contents;
+}
+
+.marksContent{
+    display: none;
+}
