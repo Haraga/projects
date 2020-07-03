@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/blue"
+    android:fadeScrollbars="false"
+    android:scrollbarSize="3dp"
+    android:scrollbarThumbVertical="@color/lightblue"
+    android:scrollbars="vertical"
+    android:verticalScrollbarPosition="left"
+    tools:context=".gui.ArticleActivity">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/blue">
+
+        <androidx.appcompat.widget.AppCompatImageButton
+            android:id="@+id/button_back"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="35dp"
+            android:layout_marginTop="35dp"
+            android:background="@drawable/ic_goback_icon"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="5dp"
+            android:layout_marginTop="47dp"
+            android:fontFamily="@font/roboto"
+            android:text="@string/back_to_news"
+            android:textColor="@color/lightblue"
+            android:textSize="12sp"
+            app:layout_constraintStart_toEndOf="@id/button_back"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/textView_articletitle"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="35dp"
+            android:layout_marginTop="100dp"
+            android:layout_marginEnd="35dp"
+            android:fontFamily="@font/roboto"
+            android:text="Article title 001 20200413."
+            android:textColor="@color/white"
+            android:textSize="18sp"
+            android:textStyle="bold"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/textView_articleauthor"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/roboto"
+            android:text="Authorus Mehawkus"
+            android:textColor="@color/white"
+            android:textSize="12sp"
+            android:textStyle="italic"
+            app:layout_constraintStart_toStartOf="@+id/textView_articletitle"
+            app:layout_constraintTop_toBottomOf="@+id/textView_articletitle" />
+
+        <TextView
+            android:id="@+id/textView_articledate"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:fontFamily="@font/roboto"
+            android:text="12-Apr-20"
+            android:textColor="@color/yellow"
+            android:textSize="12sp"
+            android:textStyle="bold"
+            app:layout_constraintStart_toStartOf="@+id/textView_articleauthor"
+            app:layout_constraintTop_toBottomOf="@+id/textView_articleauthor" />
+
+        <TextView
+            android:id="@+id/textView_articlecontent"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:layout_marginEnd="35dp"
+            android:fontFamily="@font/roboto"
+            android:paddingBottom="35dp"
+            android:text="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque at pretium orci. Nulla facilisi. Suspendisse auctor eros vitae pretium feugiat. Mauris congue lobortis nulla, a aliquet ipsum faucibus in. Mauris efficitur ultrices nisi rhoncus pulvinar. In hac habitasse platea dictumst. Proin ut aliquam massa. Nulla gravida dui at mi rutrum, sed commodo elit hendrerit. Aenean condimentum mi finibus neque imperdiet, eget sollicitudin sapien sodales. Duis eleifend nunc a magna imperdiet vehicula. Sed venenatis condimentum enim, pharetra iaculis mauris efficitur nec. Duis justo ligula, sodales sed convallis at, ultrices vel lorem. Morbi ipsum sapien, scelerisque vel est et, scelerisque faucibus nisi. Phasellus pellentesque vulputate pretium. \n\nMorbi quam ipsum, pulvinar dignissim urna vitae, venenatis tempor sem. Phasellus justo massa, commodo et mollis nec, fermentum facilisis elit. Duis mollis accumsan mollis. Donec a leo vitae mauris rutrum tempor. Suspendisse laoreet, mauris sed ultrices consectetur, massa ex commodo purus, non congue sem augue quis sapien. Etiam convallis ultricies gravida. Pellentesque fringilla porttitor felis ac posuere. Ut nec mi ut mauris eleifend tincidunt mollis non risus. Proin condimentum nisl ut congue consectetur. Morbi tempor nulla est, eget facilisis orci ultrices a. Aenean et ligula id purus finibus aliquam. Nullam viverra turpis vel leo condimentum, vel pharetra urna auctor."
+            android:textColor="@color/white"
+            android:textSize="14sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="@id/textView_articledate"
+            app:layout_constraintTop_toBottomOf="@id/textView_articledate" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</ScrollView>

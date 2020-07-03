@@ -1,0 +1,28 @@
+<resources>
+    <string name="app_name">UBBapp</string>
+    <string name="write_a_note">Write a note.</string>
+    <string name="what_would_you_like_to_do_today">What would you like to do today?</string>
+    <string name="schedule">Schedule</string>
+    <string name="chat">Chat</string>
+    <string name="news">News</string>
+    <string name="locations">Locations</string>
+    <string name="homework">Homework</string>
+    <string name="activity">Activity</string>
+    <string name="did_you_forget_your_password">Did you forget your password?</string>
+    <string name="login">Login</string>
+    <string name="reset_password">RESET PASSWORD</string>
+    <string name="username">USERNAME</string>
+    <string name="password">PASSWORD</string>
+    <string name="back_to_home">Back to Home</string>
+    <string name="daily_schedule">DAILY SCHD.</string>
+    <string name="weekly">Weekly</string>
+    <string name="course">course</string>
+    <string name="seminar">seminar</string>
+    <string name="lab">lab</string>
+    <string name="other">other</string>
+    <string name="courses">courses</string>
+    <string name="seminars">seminars</string>
+    <string name="labs">labs</string>
+    <string name="back_to_news">Back to News</string>
+    <string name="email">EMAIL</string>
+</resources>
