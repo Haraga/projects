@@ -1,0 +1,346 @@
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header,
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    vertical-align: baseline;
+}
+article, aside, details, figcaption, figure,
+footer, header, menu, nav, section {
+    display: block;
+}
+ol, ul {
+    list-style: none;
+}
+blockquote, q {
+    quotes: none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+    content: none;
+}
+table {
+    border-collapse: collapse;
+    border-spacing: 0;
+}
+.clearfix:after {
+    content: "";
+    display: block;
+    clear: both;
+    visibility: hidden;
+    line-height: 0;
+    height: 0;
+}
+.clearfix {
+    display: inline-block;
+}
+html[xmlns] .clearfix {
+    display: block;
+}
+* html .clearfix {
+    height: 1%;
+}
+
+/*HTML + BODY*/
+
+html{
+    height: 100%;
+    width: 100%;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-image: url("https://cdn.pixabay.com/photo/2017/08/12/10/13/background-2633962_960_720.jpg");
+    background-size: cover;
+    font-family: 'Montserrat', sans-serif;
+    font-family: 'Josefin Sans', sans-serif;
+}
+
+body{
+    height: 100vh;
+    width: 100vw;
+}
+
+/*Forms*/
+
+.container{
+    margin: 0 15% 0 15%;
+    max-height: 92vh;
+    height: 100%;
+    text-align: center;
+    display: flex;
+    flex-flow: column;
+    overflow: hidden;
+}
+
+.form{
+    flex: 1 1 auto;
+    height: auto;
+    background: rgba(255, 0, 42, 0.3);
+    overflow: hidden;
+}
+
+.questions{
+    width: 45%;
+    display: inline-table;
+    height: 50%;
+    margin: 2% 2% 0 2%;
+}
+
+.topHalf{
+    max-height: 75%;
+    display: block;
+    overflow: hidden;
+}
+
+.content{
+    min-height: 20%;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+}
+
+.contentText{
+    width: 100%;
+    height: 50%;
+
+}
+
+.bottomHalf{
+    display: block;
+    max-height: 35%;
+    width: 100%;
+}
+
+.split{
+    width: 100%;
+    text-align: center;
+    padding: 10% 0 10% 0;
+}
+
+.footer{
+    max-height: 8vh;
+    width: 100%;
+    margin: 5px 0 5px 0;
+    text-align: center;
+    position: fixed;
+    bottom: 0;
+    display: block;
+    /*flex: 0 1 auto;*/
+    overflow: hidden;
+}
+
+/*Fonts*/
+
+.title{
+    flex: 0 1 auto;
+    margin: 0 0 3% 0;
+    padding-top: 2%;
+    text-align: center;
+}
+
+.title h1{
+    font-family: 'Francois One', sans-serif;
+    font-family: 'Patua One', cursive;
+}
+
+.question{
+    font-size: 25px;
+}
+
+/*Inputs*/
+
+.radio{
+    margin: 5% 3% 5% 0;
+}
+
+.gender{
+    font-size: 20px;
+    margin: 0 10px 0 0;
+}
+
+.textBox{
+    width: 15vw;
+    margin: 4.5% 0 4.5% 0;
+    font-size: 20px;
+    border-radius: 10px;
+}
+
+.button{
+    width: 15%;
+    font: bold 13px Arial;
+    background-color: #EEEEEE;
+    color: #333333;
+    padding: 2px 6px 2px 6px;
+    border-top: 1px solid #CCCCCC;
+    border-right: 1px solid #333333;
+    border-bottom: 1px solid #333333;
+    border-left: 1px solid #CCCCCC;
+    margin: auto;
+    border-radius: 10px;
+    font-family: 'Shadows Into Light', cursive;
+}
+
+.footer p {
+    font-size: 20px;
+}
+
+#message{
+    margin: 0 0 4% 0;
+    font-size: 20px;
+}
+
+#selected-file{
+    font-size: 20px;
+    line-height: 3;
+}
+
+#submit{
+    font-family: 'Shadows Into Light', cursive;
+}
+
+/*Media queries*/
+/*Smartphone*/
+@media only screen and (min-device-width : 320px) and (max-device-width : 768px) and (orientation: portrait) {
+
+    .contentText form{
+        margin: 40% 0 0 0;
+    }
+
+    .radio{
+        margin: 0 3% 0 0;
+    }
+
+    .title h1 {
+        font-size: 40px;
+    }
+
+    .question {
+        font-size: 25px;
+    }
+
+    .footer p {
+        font-size: 25px;
+    }
+
+    .gender {
+        font-size: 20px;
+    }
+
+    .textBox {
+        width: 15vw;
+        margin: 35.5% 0 0 0;
+        font-size: 15px;
+    }
+
+    .questions {
+        width: 45%;
+        display: inline-table;
+        height: 75%;
+        margin: 2% 2% 0 2%;
+    }
+
+    .form{
+        flex: 1 1 auto;
+        height: auto;
+        background: rgba(255, 0, 42, 0.3);
+        overflow: auto;
+    }
+
+    .button{
+        width: 18%;
+        font: bold 13px Arial;
+        background-color: #EEEEEE;
+        color: #333333;
+        padding: 2px 6px 2px 6px;
+        border-top: 1px solid #CCCCCC;
+        border-right: 1px solid #333333;
+        border-bottom: 1px solid #333333;
+        border-left: 1px solid #CCCCCC;
+        margin: auto;
+        border-radius: 10px;
+    }
+
+    #submit{
+        font-size: 18px;
+    }
+
+    #message{
+        font-size: 20px;
+    }
+
+    #selected-file{
+        font-size: 20px;
+    }
+}
+
+@media only screen and (min-device-width : 320px) and (max-device-width : 850px) and (orientation: landscape) {
+
+    .title h1{
+        font-size: 30px;
+    }
+
+    .question{
+        font-size: 20px;
+    }
+
+    .footer p{
+        font-size: 15px;
+    }
+
+    .gender{
+        font-size: 20px;
+    }
+
+    .textBox{
+        width: 15vw;
+        margin: 4.5% 0 4.5% 0;
+        font-size: 10px;
+    }
+}
+
+/*Tablets*/
+@media only screen and (min-device-width : 769px) and (max-device-width : 1024px) and (orientation: portrait) {
+
+    .title h1{
+        font-size: 40px;
+    }
+
+    .question{
+        font-size: 25px;
+    }
+
+    .footer p{
+        font-size: 25px;
+    }
+
+    .gender{
+        font-size: 20px;
+    }
+
+    .textBox{
+        width: 15vw;
+        margin: 4.5% 0 4.5% 0;
+        font-size: 20px;
+    }
+}
+
+@media screen and (min-device-height: 320px) and (max-device-height: 600px) {
+    .form{
+        height: auto;
+        background: rgba(255, 0, 42, 0.3);
+        overflow: auto;
+        max-height: 68vh;
+    }
+}

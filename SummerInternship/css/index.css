@@ -1,0 +1,214 @@
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header,
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    vertical-align: baseline;
+}
+article, aside, details, figcaption, figure,
+footer, header, menu, nav, section {
+    display: block;
+}
+ol, ul {
+    list-style: none;
+}
+blockquote, q {
+    quotes: none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+    content: none;
+}
+table {
+    border-collapse: collapse;
+    border-spacing: 0;
+}
+.clearfix:after {
+    content: "";
+    display: block;
+    clear: both;
+    visibility: hidden;
+    line-height: 0;
+    height: 0;
+}
+.clearfix {
+    display: inline-block;
+}
+html[xmlns] .clearfix {
+    display: block;
+}
+* html .clearfix {
+    height: 1%;
+}
+
+/*HTML + BODY*/
+html{
+    //background: linear-gradient(to right, #0ce600 0, #19e600 33%, #fbff00 33%, #feff00 66%, #ff0000 66%, #ff0000 100%);
+    //background-image: -webkit-gradient(radial, 100% 100%, 10, 90% 90%, 800, from(#28daff), to(#f4fcff));
+    //background: url(/assets/images/fleck-white.png),url(/assets/images/bg.svg),#e2718d;
+    background-color: tomato;
+    height: 100%;
+    width: 100%;
+}
+
+body{
+    background-image: url("https://images3.alphacoders.com/975/975999.png");
+    background-repeat: no-repeat;
+    background-color: white;
+    height: 100vh;
+}
+
+/*First text*/
+#intro{
+    /*color: rgb(200, 200, 230);*/
+    display: block;
+    margin: 0 auto;
+    padding-top: 7%;
+    text-align: center;
+    height: 8%;
+    width: 85%;
+    font-family: monospace, "Courier New", "Lucida Console";
+    color: rgb(200, 200, 230);
+}
+
+#intro h1{
+    font-size: 60px;
+}
+
+#intro h3{
+    font-size: 35px;
+}
+
+/*Log in form*/
+.outer{
+    margin: 0 auto;
+    display: block;
+    width: 375px;
+    max-height: 75%;
+    font-family: sans-serif, Arial, Verdana;
+    color: rgb(200, 200, 230);
+}
+
+.inner{
+    display: block;
+    vertical-align: middle;
+    text-align: center;
+    height: 50%;
+    margin: 15vh 0 15vh 0;
+    padding-top: 25%;
+    padding-bottom: 25%;
+}
+
+.infoText{
+    font-size: 35px;
+}
+
+.logInTextBox{
+    margin: 15px 0 15px 0;
+}
+
+.textBox {
+    height: 20px;
+    font-size: 20px;
+}
+
+.button{
+    margin-top: 70px;
+    height: 25px;
+    width: 75px;
+}
+
+.form{
+}
+
+#usernameMsg{
+    color: #ff0200;
+}
+
+/*FOOTER*/
+.footer{
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    text-align: center;
+    color: rgb(200, 200, 230);
+}
+
+.footer h5{
+    font-size: 35px;
+}
+
+
+/*Media queries*/
+/*Smartphone*/
+@media only screen and (min-device-width : 320px) and (max-device-width : 769px) {
+
+    .inner{
+        display: block;
+        vertical-align: middle;
+        text-align: center;
+        height: 50%;
+        margin: 25vh 0 15vh 0;
+        padding-top: 25%;
+        padding-bottom: 25%;
+    }
+
+    #intro h1{
+        font-size: 50px;
+    }
+
+    #intro h3{
+        font-size: 25px;
+    }
+
+    .logInText{
+        font-size: 25px;
+    }
+
+    .footer h5{
+        font-size: 25px;
+    }
+}
+
+@media only screen and (min-device-width : 320px) and (max-device-width : 850px) and (orientation: landscape){
+
+    .inner{
+        display: block;
+        vertical-align: middle;
+        text-align: center;
+        height: 50%;
+        margin: -2vh 0 0 0;
+        padding-top: 25%;
+        padding-bottom: 25%;
+    }
+}
+
+/*Tablets*/
+@media only screen and (min-device-width : 770px) and (max-device-width : 1024px) {
+    #intro h1{
+        font-size: 55px;
+    }
+
+    #intro h3{
+        font-size: 30px;
+    }
+
+    .logInText{
+        font-size: 30px;
+    }
+
+    .footer h5{
+        font-size: 30px;
+    }
+}
